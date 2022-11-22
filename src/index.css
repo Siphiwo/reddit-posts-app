@@ -8,12 +8,23 @@ body {
   padding: 20px;
   background-color: #030303;
 }
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1 span {
+  color: #ff4400;
+}
 .app-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   width: 100%;
+  max-width: 1366px;
   color: #efefef;
+  margin-left: auto;
+  margin-right: auto;
 }
 .item-container {
   text-align: center;

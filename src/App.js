@@ -8,13 +8,17 @@ function App() {
   const [listData, setListData] = useState([])
   const [triggerUI, setTriggerUI] = useState(0)
 
+  useEffect(() => {
+    getRedditPosts()
+  }, [triggerUI])
+
   const getRedditPosts = async () => {
     let posts_retrieved;
     try {
       const res = await fetch(`https://www.reddit.com/r/aww/top.json?after=${loadmore}`)
-      const api_data = await res.json()
+      const data = await res.json()
 
-      posts_retrieved = api_data
+      posts_retrieved = data
 
     } catch (error) {
       console.log(error)
@@ -36,7 +40,7 @@ function App() {
     observer.observe(document.querySelector('.item-container.last'))
   }
 
-  function handleIntersection(entries, observer) {
+  function handleIntersection(entries) {
     entries.forEach((entry) => {
       if(entry.intersectionRatio > 0.0) {
         setTriggerUI(triggerUI + 1)
@@ -44,13 +48,10 @@ function App() {
     })
   }
 
-  useEffect(() => {
-    getRedditPosts()
-  }, [triggerUI])
-
   return (
     <div className="app-container">
-      <h1>Reddit Posts</h1>
+      <h1>Reddit <span>Posts</span></h1>
+
       {listData.map((post, index) => {
         let last_item = '';
         if(index == listData.length - 1) {
