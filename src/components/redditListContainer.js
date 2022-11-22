@@ -1,9 +1,12 @@
 import React from 'react'
 
-const redditListContainer = () => {
+const RedditListContainer = ({children, position}) => {
+  
   return (
-    <div>redditListContainer</div>
+    <div className={`item-container ${position}`}>
+        <div className='item-content'>{children}</div>
+    </div>
   )
 }
 
-export default redditListContainer
+export default RedditListContainer

@@ -5,9 +5,50 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 20px;
+  background-color: #030303;
+}
+.app-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  color: #efefef;
+}
+.item-container {
+  text-align: center;
+  padding: 6px;
+  background-color: #1a1a1b;
+  border: 1px solid #343536;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+h3.post-title {
+  margin: 0 0 10px 0;
+  font-size: 18px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h3.post-title a {
+  color: #d7dadc;
+  text-decoration: none;
+}
+
+.post-subreddit {
+  display: flex;
+  padding: 3px 18px;
+  background-color: #ff45001f;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 15px;
+  border: .5px solid #ff450059;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.item-content {
+  position: relative;
 }
